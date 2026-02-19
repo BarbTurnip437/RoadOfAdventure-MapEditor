@@ -50,6 +50,10 @@
 #include<conio.h>
 #include<windows.h>
 
+
+#pragma warning(disable:4996)
+
+
 int BoolMapDataEasyRead = 1;//导出的地图 是否 容易阅读 
 
 int cz = 0;
@@ -295,7 +299,7 @@ void GameMapData(std::string cs,std::string mapname){//<------------------------
 			PFMapData>>Map.SJData.Data[i].Type;//事件类型
 			if(Map.SJData.Data[i].Type == 1){//1===传送 
 				PFMapData>>Map.SJData.CSData[Map.SJData.CSNum].MapName;//目标地图
-				PFMapData>>Map.SJData.CSData[Map.SJData.CSNum].X>>Map.SJData.CSData[Map.SJData.CSNum].X; //目标位置 
+				PFMapData>>Map.SJData.CSData[Map.SJData.CSNum].X>>Map.SJData.CSData[Map.SJData.CSNum].Y; //目标位置 
 				Map.SJData.Data[i].Hand = Map.SJData.CSNum;
 				Map.SJData.CSNum ++;
 			}else if(Map.SJData.Data[i].Type == 2){//2===对话 
